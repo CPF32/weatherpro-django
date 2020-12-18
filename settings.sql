@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS weatherpro;
+CREATE DATABASE weatherpro;
