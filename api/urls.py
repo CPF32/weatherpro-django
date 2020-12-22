@@ -1,9 +1,12 @@
 from django.urls import path
 from .views.mango_views import Mangos, MangoDetail
+from .views.city_views import Cities, CityDetail
 from .views.user_views import SignUp, SignIn, SignOut, ChangePassword
 
 urlpatterns = [
   	# Restful routing
+    path('city-builder/', Cities.as_view(), name='cities'),
+    path('city-builder/<int:pk>/', CityDetail.as_view(), name='city_detail'),
     path('mangos/', Mangos.as_view(), name='mangos'),
     path('mangos/<int:pk>/', MangoDetail.as_view(), name='mango_detail'),
     path('sign-up/', SignUp.as_view(), name='sign-up'),
