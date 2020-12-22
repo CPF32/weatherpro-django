@@ -39,7 +39,7 @@ class CityDetail(generics.RetrieveUpdateDestroyAPIView):
         # get city for delete
         city = get_object_or_404(City, pk=pk)
         # confirm correct ownership rights
-        if not request.user.id == city.owner.id
+        if not request.user.id == city.owner.id:
             raise PermissionDenied('Unauthorized, you are not the owner of this city')
 
         city.delete()
@@ -48,7 +48,7 @@ class CityDetail(generics.RetrieveUpdateDestroyAPIView):
     # Update Request
     def partial_update(self, request, pk):
         # remove owner or return false
-        if request.data['city'].get('owner', False)
+        if request.data['city'].get('owner', False):
             del request.data['city']['owner']
         # locate city
         city = get_object_or_404(City, pk=pk)

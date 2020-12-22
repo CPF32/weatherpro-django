@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
 from .models.mango import Mango
-from .model.city import City
+from .models.city import City
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
